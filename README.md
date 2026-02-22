@@ -1,4 +1,4 @@
-# 🛰️ Sentinel-X: High-Performance Cyber Dashboard
+# 🛰️ J-CyberStream: High-Performance Cyber Dashboard
 
 Enterprise-grade network visualization dashboard built with **React**, **TypeScript**, and a **Rust-powered WebAssembly** physics engine.
 
