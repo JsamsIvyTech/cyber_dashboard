@@ -1,0 +1,114 @@
+/* --- SENTINEL V6 STABILIZED --- */
+
+:root {
+  background-color: #050507;
+  color: white;
+}
+
+body {
+  margin: 0;
+  background-color: #050507 !important;
+  color: white !important;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #050507;
+}
+
+/* --- TACTICAL OVERLAY (SAFE VERSION) --- */
+
+/* Scanlines (CSS Only, no external images) */
+#root::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* Vignette */
+#root::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes panelScan {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 209, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 209, 255, 0.4);
+}

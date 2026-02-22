@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENTINEL X</title>
+  <style>
+    body {
+      margin: 0;
+      background: #050507;
+      color: #00d1ff;
+      font-family: monospace;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #root:empty::before {
+      content: "ESTABLISHING SECURE CONNECTION...";
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    console.log("SENTINEL-X: HTML ENTRY LOADED");
+  </script>
+</body>
+
+</html>
